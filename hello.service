@@ -14,5 +14,6 @@ Type = oneshot
 # Avoiding the service to go dead as soon as it finishes, not necessary.
 RemainAfterExit = yes
 
+# Used when we have to enable systemctl.
 [Install]
 WantedBy=multi-user.target
