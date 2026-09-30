@@ -1,0 +1,15 @@
+# Every systemd, as a unit file it is, is structured with [Unit],[X] and [Install], where [X] is referred to the Unit File Type.
+# For this activity, the one it fits the most is [Service].
+
+# In Unit we define the relation between the Unit file and other ones.
+[Unit]
+Description = Print "Hello Profes" in ASCII.
+
+# 
+[Service]
+ExecStart = /home/uriii/AMSA/booting_systemd/hello.sh
+Type = oneshot
+RemainAfterExit = yes
+
+[Install]
+WantedBy=multi-user.target
