@@ -5,14 +5,20 @@
 [Unit]
 Description = Print "Hello Profes" in ASCII.
 
+
 # We define how the service runs.
 [Service]
-#ExecStart is the command systemd executes.
-ExecStart = /home/uriii/AMSA/booting_systemd/hello.sh
+# ExecStart is the command systemd executes.
+# ExecStart = /home/uriii/AMSA/booting_systemd/hello.sh . Won't work bc that path is just for local, so we have
+# to adjust it to make it runnable in a general path, so usr/local/bin will be the correct one.
+ExecStart = /usr/local/bin/hello.sh
+
 # oneshot is for process that does only one job and then exits.
 Type = oneshot
+
 # Avoiding the service to go dead as soon as it finishes, not necessary.
 RemainAfterExit = yes
+
 
 # Used when we have to enable systemctl.
 [Install]
